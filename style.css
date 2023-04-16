@@ -16,6 +16,12 @@ body {
     align-items: center;
 }
 
+@media (width < 450px){
+    body{
+       align-items: flex-start;
+       padding-top: 10%;
+    }
+}
 
 .formContainer{
     font-family: 'Ubuntu', sans-serif;
