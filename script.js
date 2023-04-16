@@ -36,8 +36,7 @@ function randomPosition(){
     return position;
 }
 
-theButton.addEventListener("mouseover", (e) => {
-    e.preventDefault();
+theButton.addEventListener("mouseover", () => {
     if ((username.checkValidity()) && (password.checkValidity())){
         return;
     }
@@ -50,9 +49,18 @@ theButton.addEventListener("mouseover", (e) => {
 })
 
 theButton.addEventListener("click", () => {
-    alert("Yay!\nYou Passed")
-    username.value = "";
-    password.value = "";
+    if ((username.checkValidity()) && (password.checkValidity())){
+        alert("Yay!\nYou Passed")
+        username.value = "";
+        password.value = "";
+        return;
+    }
+
+    let position = randomPosition();
+    buttonPosition = position;
+
+    console.log("Position: " + position)
+    theButton.style.transform = `translateX(${position}px)`;
 })
 
 
